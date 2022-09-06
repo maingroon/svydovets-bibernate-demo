@@ -1,0 +1,11 @@
+services:
+  svydovets-bibernate-demo:
+    image: postgres:latest
+    ports:
+      - 5430:5432
+    environment:
+      POSTGRES_DB: bibernate
+      POSTGRES_USER: svydovets
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
